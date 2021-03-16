@@ -3,7 +3,7 @@
 build:
 	docker build -t docker-selenium-lambda .
 bash:
-	docker run --rm -it --entrypoint '' docker-selenium-lambda bash
+	docker run --rm -it --entrypoint '' --mount type=bind,source=$(shell pwd)/test.py,target=/var/task/test.py docker-selenium-lambda bash
 run:
 	docker run -p 7000:8080 --rm -it docker-selenium-lambda
 test:
