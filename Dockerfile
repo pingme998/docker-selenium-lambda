@@ -16,4 +16,5 @@ COPY --from=build /opt/bin/chromedriver /opt/bin/
 RUN /usr/sbin/useradd -m -d /tmp/home sbx_user1051
 USER sbx_user1051
 COPY test.py ./
-CMD [ "test.handler" ]
+COPY debug.py ./
+CMD [ "debug.debug" ]
