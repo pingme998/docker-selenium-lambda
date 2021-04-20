@@ -14,6 +14,8 @@ def debug(event=None, context=None):
             "--headless",
             "--disable-gpu",
             "--dump-dom",
+            "--single-process",
+            "--disable-dev-shm-usage",
             "https://example.com"
         ], capture_output=True, text=True).stdout,
     ])
