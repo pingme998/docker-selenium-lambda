@@ -7,8 +7,15 @@ from test import handler
 def debug(event=None, context=None):
     # text = handler()
     text = "\n".join([
-        subprocess.run(
-            "google-chrome --user-data-dir=/tmp/home/user-data --no-sandbox --headless --disable-gpu --dump-dom https://example.com".split(" "), capture_output=True, text=True).stdout,
+        subprocess.run([
+            "google-chrome",
+            "--user-data-dir=/tmp/home/user-data",
+            "--no-sandbox",
+            "--headless",
+            "--disable-gpu",
+            "--dump-dom",
+            "https://example.com"
+        ], capture_output=True, text=True).stdout,
     ])
     # try:
     # except Exception as e:
