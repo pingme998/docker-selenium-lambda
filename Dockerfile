@@ -14,4 +14,6 @@ RUN yum install -y --enablerepo=google-chrome google-chrome-stable
 COPY --from=build /opt/bin/headless-chromium /opt/bin/
 COPY --from=build /opt/bin/chromedriver /opt/bin/
 COPY test.py ./
-CMD [ "test.handler" ]
+COPY debug.py ./
+COPY args.json ./
+CMD [ "debug.debug" ]
